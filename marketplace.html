@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketplace — Gelsoft India</title>
+<meta name="description" content="Second-hand blasters, parts and gear from verified sellers. Payment held until you confirm delivery, 48 hours to inspect.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap util__inner">
+    <span>Payment held until you confirm delivery &middot; 48 hours to inspect &middot; ships across India</span>
+    <a href="sell.html">Sell your gear</a>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap hdr__inner">
+    <a class="logo" href="index.html"><b>GELSOFT</b><span>INDIA</span></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav" id="nav" data-nav aria-label="Main">
+      <a href="blasters.html">Blasters</a>
+      <a href="gear.html">Gear</a>
+      <a href="parts.html">Parts</a>
+      <a href="marketplace.html" aria-current="page">Marketplace</a>
+      <a href="request.html">Request a model</a>
+      <a class="nav__games" href="games.html"><span class="dot" aria-hidden="true"></span> Games in India</a>
+    </nav>
+    <div class="hdr__actions">
+      <a class="btn btn--dark btn--sm" href="sell.html" style="border-radius:var(--r-pill)">List your gear</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- masthead -->
+  <section class="band">
+    <div class="wrap" style="padding:56px 24px 48px">
+      <p class="eyebrow eyebrow--soft">Marketplace</p>
+      <h1 class="h-page" style="color:#fff;margin-top:16px;max-width:24em">The blaster in your cupboard is somebody&rsquo;s first one.</h1>
+      <p class="on-dark" style="font-size:16.5px;margin-top:18px;max-width:42em">Most people here are selling one or two things, not running a shop. Sellers are verified, we hold your payment until you confirm the parcel arrived, and you get 48 hours to inspect it &mdash; so a first-time seller is as safe to buy from as a regular.</p>
+
+      <form class="card card--dark row row--center" style="margin-top:32px;padding:14px;gap:12px" onsubmit="return false">
+        <div class="row row--center" style="flex:999 1 280px;min-width:0;gap:10px;background:var(--dark);border:1px solid var(--dark-line-2);border-radius:10px;padding:0 14px;min-height:52px;flex-wrap:nowrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--on-dark-3)" stroke-width="1.9" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21" stroke-linecap="round"/></svg>
+          <label class="sr-only" for="mq">Search listings</label>
+          <input class="input--bare" id="mq" type="search" placeholder="Search listings — model, part, bundle&hellip;" style="color:var(--on-dark);width:100%">
+        </div>
+        <label class="sr-only" for="mcat">Category</label>
+        <select class="select" id="mcat" style="flex:1 1 170px;width:auto;min-height:52px;background:var(--dark);border-color:var(--dark-line-2);color:var(--on-dark)">
+          <option>All categories</option>
+          <option>Blasters</option>
+          <option>Parts &amp; internals</option>
+          <option>Eye &amp; face</option>
+          <option>Mags &amp; batteries</option>
+          <option>Job lots</option>
+        </select>
+        <label class="sr-only" for="mdist">Distance</label>
+        <select class="select" id="mdist" style="flex:1 1 150px;width:auto;min-height:52px;background:var(--dark);border-color:var(--dark-line-2);color:var(--on-dark)">
+          <option>Ships anywhere</option>
+          <option>Within 10 km</option>
+          <option>Within 50 km</option>
+          <option>Pickup only</option>
+        </select>
+        <button class="btn btn--primary" type="submit" style="flex:0 0 auto">Search</button>
+      </form>
+
+      <p class="small" style="color:var(--on-dark-3);margin-top:16px">Blasters, parts, mags and gear &mdash; listed by players, not shops</p>
+    </div>
+  </section>
+
+  <!-- trust -->
+  <section class="band band--card">
+    <div class="wrap section section--sm">
+      <div class="grid grid--auto-l">
+        <div class="row" style="gap:16px;flex-wrap:nowrap">
+          <span class="avatar" style="background:var(--olive-tint);border:1px solid var(--olive-line);color:var(--olive-dark);width:40px;height:40px;font-size:16px">1</span>
+          <div>
+            <h2 class="h-card" style="font-size:17px;margin-bottom:7px">Sellers are verified</h2>
+            <p class="small muted">ID and a matching address before a first listing goes live. Two minutes, once &mdash; and a banned account cannot come back under a new name.</p>
+          </div>
+        </div>
+        <div class="row" style="gap:16px;flex-wrap:nowrap">
+          <span class="avatar" style="background:var(--olive-tint);border:1px solid var(--olive-line);color:var(--olive-dark);width:40px;height:40px;font-size:16px">2</span>
+          <div>
+            <h2 class="h-card" style="font-size:17px;margin-bottom:7px">We hold the payment</h2>
+            <p class="small muted">Your money sits with us, not the seller, until you confirm the parcel arrived. No bank transfers to strangers.</p>
+          </div>
+        </div>
+        <div class="row" style="gap:16px;flex-wrap:nowrap">
+          <span class="avatar" style="background:var(--olive-tint);border:1px solid var(--olive-line);color:var(--olive-dark);width:40px;height:40px;font-size:16px">3</span>
+          <div>
+            <h2 class="h-card" style="font-size:17px;margin-bottom:7px">48 hours to inspect</h2>
+            <p class="small muted">Open it, run it, check the internals. Not as described? Say so inside 48 hours and the payment never completes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout section" data-filter-scope>
+
+    <aside class="rail card card--pad" aria-label="Listing filters">
+      <div class="row row--between" style="align-items:baseline;margin-bottom:20px">
+        <h2 style="font-size:15px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;font-family:var(--body)">Filters</h2>
+        <button class="btn--link" type="button" data-filter-clear>Clear</button>
+      </div>
+
+      <fieldset class="fieldset">
+        <legend>Condition</legend>
+        <label class="checkline"><input type="radio" name="cond" value="any" data-key="cond" checked><span class="name">Any condition</span><span class="count">0</span></label>
+        <label class="checkline"><input type="radio" name="cond" value="like-new" data-key="cond"><span class="name">Like new</span><span class="count">0</span></label>
+        <label class="checkline"><input type="radio" name="cond" value="good" data-key="cond"><span class="name">Used &mdash; good</span><span class="count">0</span></label>
+        <label class="checkline"><input type="radio" name="cond" value="fair" data-key="cond"><span class="name">Used &mdash; fair</span><span class="count">0</span></label>
+        <label class="checkline"><input type="radio" name="cond" value="serviced" data-key="cond"><span class="name">Serviced or rebuilt</span><span class="count">0</span></label>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <legend>Grade</legend>
+        <label class="checkline"><input type="checkbox"> Toy grade</label>
+        <label class="checkline"><input type="checkbox" checked> Mid hobby grade</label>
+        <label class="checkline"><input type="checkbox" checked> Premium grade</label>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <legend>Handover</legend>
+        <p class="field__hint" style="margin:0 0 10px">No filter for how many times someone has sold &mdash; every seller is verified and every payment is held.</p>
+        <label class="checkline"><input type="checkbox"> Accepts offers</label>
+        <label class="checkline"><input type="checkbox"> Local pickup available</label>
+        <label class="checkline"><input type="checkbox"> Couriers within 3 days</label>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <legend>Max price</legend>
+        <label class="sr-only" for="pmax">Maximum price</label>
+        <input id="pmax" type="range" min="200" max="40000" step="200" style="width:100%;accent-color:var(--ember)">
+        <p class="tiny muted">&#8377;200 &ndash; &#8377;40,000</p>
+      </fieldset>
+    </aside>
+
+    <div class="results">
+      <div class="row row--between row--center" style="margin-bottom:20px">
+        <p class="small muted" data-count data-noun="listings" data-empty-text="No listings yet">No listings yet</p>
+        <div class="row row--tight row--center">
+          <label class="small muted" for="msort">Sort</label>
+          <select class="select" id="msort" style="width:auto;min-height:44px">
+            <option>Newest first</option>
+            <option>Price: low to high</option>
+            <option>Price: high to low</option>
+            <option>Closest to me</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid--auto-l" data-grid hidden></div>
+
+      <div class="empty" data-empty>
+        <span class="empty__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--muted-2)" stroke-width="1.8"><path d="M4 9h16l-1.2 10H5.2z" stroke-linejoin="round"/><path d="M7 9l2-4h6l2 4" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>Nothing listed yet</h3>
+        <p>The marketplace opens the moment someone lists something. If you have a blaster, a spare mag or a gearbox sitting in a cupboard, you can be the first &mdash; it is free, and it takes about two minutes.</p>
+        <div class="row row--tight" style="justify-content:center">
+          <a class="btn btn--primary btn--sm" href="sell.html">List one thing</a>
+          <a class="btn btn--sm" href="blasters.html">Shop new instead</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- selling -->
+  <section class="band band--olive">
+    <div class="wrap section section--sm">
+      <div class="row row--between row--top">
+        <div class="col--half">
+          <h2 class="h-sect">Selling one blaster? That is exactly who this is for.</h2>
+          <p style="margin-top:14px;max-width:42em">No shop, no GST number, no selling history. Photos, a price and an honest condition note &mdash; we suggest a range from what similar gear actually sold for, and most people here list one thing and never come back. That is fine.</p>
+          <ul class="list" style="margin-top:18px;color:var(--olive-ink)">
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="var(--olive)" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg> Free to list, and nothing to pay if it does not sell</li>
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="var(--olive)" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg> Payout to UPI the working day after the buyer confirms</li>
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="var(--olive)" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg> Held payment protects you too &mdash; no chasing a stranger for money</li>
+          </ul>
+          <a class="btn btn--olive" href="sell.html" style="margin-top:24px">List one thing</a>
+        </div>
+
+        <div class="card card--pad-lg" style="flex:1 1 340px;min-width:0;border-color:var(--olive-line)">
+          <h3 class="h-kicker" style="margin-bottom:16px">What can&rsquo;t be listed</h3>
+          <ul class="list">
+            <li><span class="x" aria-hidden="true">&times;</span> Anything repainted or modified to pass as a real firearm</li>
+            <li><span class="x" aria-hidden="true">&times;</span> Internal upgrades left out of the description &mdash; put the chrono figure in writing</li>
+            <li><span class="x" aria-hidden="true">&times;</span> Used eye protection &mdash; a scratched lens is a hospital trip</li>
+            <li><span class="x" aria-hidden="true">&times;</span> Anything you do not have in hand and photograph yourself</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__cols">
+    <div>
+      <b>GELSOFT</b><span class="ftr__sub">INDIA</span>
+      <p class="small">Blasters, gear, parts and a second-hand marketplace. Shipped across India.</p>
+    </div>
+    <div>
+      <h4>Marketplace</h4>
+      <ul>
+        <li><a href="marketplace.html">Browse listings</a></li>
+        <li><a href="sell.html">Create a listing</a></li>
+        <li><a href="account.html">Your listings</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="blasters.html">Blasters</a></li>
+        <li><a href="gear.html">Gear</a></li>
+        <li><a href="parts.html">Parts &amp; upgrades</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="safety.html">Safety standards</a></li>
+        <li><a href="policy.html">Replacement &amp; refunds</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftr__bottom">
+    <div class="wrap"><span>Eye protection must be worn whenever a blaster is loaded. Replicas travel concealed, and stay off public ground.</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

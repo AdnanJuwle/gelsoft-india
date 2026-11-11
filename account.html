@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your account — Gelsoft India</title>
+<meta name="description" content="Orders, addresses, restock alerts, your marketplace listings and offers, all in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap util__inner">
+    <span>Eye protection on before anyone loads &middot; carry it concealed &middot; ships across India</span>
+    <a href="sell.html">Sell your gear</a>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap hdr__inner">
+    <a class="logo" href="index.html"><b>GELSOFT</b><span>INDIA</span></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav" id="nav" data-nav aria-label="Main">
+      <a href="blasters.html">Blasters</a>
+      <a href="gear.html">Gear</a>
+      <a href="parts.html">Parts</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="request.html">Request a model</a>
+      <a class="nav__games" href="games.html"><span class="dot" aria-hidden="true"></span> Games in India</a>
+    </nav>
+    <div class="hdr__actions">
+      <a class="cart-btn" href="account.html" aria-label="Cart, empty">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h15l-1.5 9.5H6.5z" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="16" cy="20" r="1.4" fill="currentColor"/></svg>
+        0
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- who -->
+  <section class="band">
+    <div class="wrap row row--between row--center" style="padding:40px 24px">
+      <div class="row row--center" style="gap:16px;flex:1 1 380px;min-width:0;flex-wrap:nowrap">
+        <span class="avatar" style="width:52px;height:52px;font-size:17px">PR</span>
+        <div>
+          <h1 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#fff">Your account</h1>
+          <p class="small on-dark" style="margin-top:6px">Priya R. &middot; priya@example.com &middot; verified seller</p>
+        </div>
+      </div>
+      <div class="row row--tight">
+        <a class="btn btn--ghost-dark btn--sm" href="sell.html">List something</a>
+        <button class="btn btn--light btn--sm" type="button">Sign out</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap section" data-tabs="account">
+
+    <div class="tabs scroller" role="tablist" aria-label="Account sections" style="margin-bottom:28px">
+      <button role="tab" type="button" data-tab="orders" aria-selected="true">Orders</button>
+      <button role="tab" type="button" data-tab="alerts" aria-selected="false">Restock alerts</button>
+      <button role="tab" type="button" data-tab="listings" aria-selected="false">My listings</button>
+      <button role="tab" type="button" data-tab="offers" aria-selected="false">Offers &amp; messages</button>
+      <button role="tab" type="button" data-tab="addresses" aria-selected="false">Addresses</button>
+      <button role="tab" type="button" data-tab="details" aria-selected="false">Details</button>
+    </div>
+
+    <!-- orders -->
+    <section data-panel="orders" data-panel-group="account" role="tabpanel" class="tabpanel" aria-label="Orders">
+      <div class="row row--between row--end" style="margin-bottom:20px">
+        <div>
+          <h2 class="h-sect">Orders</h2>
+          <p class="small muted" style="margin-top:8px">Dispatch, tracking and what was in each parcel.</p>
+        </div>
+        <a class="small" style="font-weight:600" href="policy.html">Replacement policy &rarr;</a>
+      </div>
+
+      <div class="empty">
+        <span class="empty__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--muted-2)" stroke-width="1.8"><path d="M4 8h16l-1.5 11.5H5.5z" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke-linecap="round"/></svg>
+        </span>
+        <h3>No orders yet</h3>
+        <p>When you order, this is where the tracking link lands &mdash; and where you start a replacement if the parcel turns up damaged.</p>
+        <div class="row row--tight" style="justify-content:center">
+          <a class="btn btn--primary btn--sm" href="blasters.html">Shop blasters</a>
+          <a class="btn btn--sm" href="gear.html">Shop gear</a>
+        </div>
+      </div>
+
+      <div class="notice notice--paper" style="margin-top:20px">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.6v.1" stroke-linecap="round"/></svg>
+        <p class="small">Film the unboxing. One uncut take, parcel sealed at the start &mdash; it is the only way we can replace something the courier broke.</p>
+      </div>
+    </section>
+
+    <!-- restock alerts -->
+    <section data-panel="alerts" data-panel-group="account" role="tabpanel" class="tabpanel" aria-label="Restock alerts" hidden>
+      <div style="margin-bottom:20px">
+        <h2 class="h-sect">Restock alerts</h2>
+        <p class="small muted" style="margin-top:8px">One message per model, the day it lands. No newsletter, ever.</p>
+      </div>
+
+      <div class="empty">
+        <span class="empty__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--muted-2)" stroke-width="1.8"><path d="M18 15V10a6 6 0 1 0-12 0v5l-2 3h16z" stroke-linejoin="round"/><path d="M10 21h4" stroke-linecap="round"/></svg>
+        </span>
+        <h3>You are not watching anything</h3>
+        <p>Add an alert from any product page, or tell us the model you are after and we will message you when it is on the shelf.</p>
+        <form class="inline-form" style="justify-content:center" onsubmit="return false">
+          <label class="sr-only" for="watch">Model you are waiting for</label>
+          <input class="input" id="watch" type="text" placeholder="e.g. TG Gen 8, M4 pattern">
+          <button class="btn btn--dark btn--sm" type="submit">Watch it</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- my listings -->
+    <section data-panel="listings" data-panel-group="account" role="tabpanel" class="tabpanel" aria-label="My listings" hidden>
+      <div class="row row--between row--end" style="margin-bottom:20px">
+        <div>
+          <h2 class="h-sect">My listings</h2>
+          <p class="small muted" style="margin-top:8px">Everything you have up for sale, plus what has sold.</p>
+        </div>
+        <a class="btn btn--primary btn--sm" href="sell.html">List something</a>
+      </div>
+
+      <dl class="grid grid--auto-s" style="margin-bottom:20px">
+        <div class="stat"><dt>Live listings</dt><dd>0</dd><p class="note">Nothing up right now</p></div>
+        <div class="stat"><dt>Sold</dt><dd>0</dd><p class="note">All time</p></div>
+        <div class="stat"><dt>Paid out</dt><dd>&#8377;0</dd><p class="note">To your UPI</p></div>
+        <div class="stat"><dt>Disputes</dt><dd>0</dd><p class="note">Shown on your listings</p></div>
+      </dl>
+
+      <div class="empty">
+        <span class="empty__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--muted-2)" stroke-width="1.8"><path d="M4 9h16l-1.2 10H5.2z" stroke-linejoin="round"/><path d="M7 9l2-4h6l2 4" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>Nothing listed</h3>
+        <p>Free to list, and nothing to pay unless it sells. Most people here sell one or two things they have outgrown.</p>
+        <a class="btn btn--primary btn--sm" href="sell.html">List one thing</a>
+      </div>
+    </section>
+
+    <!-- offers -->
+    <section data-panel="offers" data-panel-group="account" role="tabpanel" class="tabpanel" aria-label="Offers and messages" hidden>
+      <div style="margin-bottom:20px">
+        <h2 class="h-sect">Offers &amp; messages</h2>
+        <p class="small muted" style="margin-top:8px">Offers on your listings, questions from buyers, and your own offers out.</p>
+      </div>
+
+      <div class="empty">
+        <span class="empty__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--muted-2)" stroke-width="1.8"><path d="M4 6h16v10H9l-5 4z" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>No messages</h3>
+        <p>Keep it in here rather than in DMs: a conversation on the listing is what we can look at if a sale goes wrong.</p>
+        <a class="btn btn--sm" href="marketplace.html">Browse listings</a>
+      </div>
+    </section>
+
+    <!-- addresses -->
+    <section data-panel="addresses" data-panel-group="account" role="tabpanel" class="tabpanel" aria-label="Addresses" hidden>
+      <div style="margin-bottom:20px">
+        <h2 class="h-sect">Addresses</h2>
+        <p class="small muted" style="margin-top:8px">Where parcels go. Add a second one if your game kit lives somewhere else.</p>
+      </div>
+
+      <div class="row">
+        <div class="card card--pad" style="flex:1 1 300px;min-width:0">
+          <div class="row row--between" style="align-items:baseline">
+            <span class="chip chip--pill chip--ok">Default</span>
+            <button class="btn--link" type="button">Edit</button>
+          </div>
+          <p style="margin-top:14px;line-height:1.7">
+            <strong>Priya R.</strong><br>
+            Flat 4, Second Cross<br>
+            Indiranagar<br>
+            Bengaluru, Karnataka 560038<br>
+            <span class="muted">+91 90000 00000</span>
+          </p>
+        </div>
+
+        <form class="card card--pad" style="flex:999 1 420px;min-width:0" onsubmit="return false">
+          <h3 class="h-kicker" style="margin-bottom:16px">Add an address</h3>
+          <div class="row row--tight">
+            <div class="field" style="flex:1 1 200px;min-width:0;margin:0">
+              <label class="field__label" for="an">Full name</label>
+              <input class="input" id="an" type="text" autocomplete="name">
+            </div>
+            <div class="field" style="flex:1 1 200px;min-width:0;margin:0">
+              <label class="field__label" for="ap">Phone</label>
+              <input class="input" id="ap" type="tel" placeholder="+91" autocomplete="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="a1">Address</label>
+            <input class="input" id="a1" type="text" placeholder="Flat, building, street" autocomplete="address-line1">
+          </div>
+          <div class="field">
+            <label class="field__label" for="a2">Area or landmark <span class="opt">&mdash; optional</span></label>
+            <input class="input" id="a2" type="text" autocomplete="address-line2">
+          </div>
+          <div class="row row--tight" style="margin-top:18px">
+            <div class="field" style="flex:1 1 170px;min-width:0;margin:0">
+              <label class="field__label" for="ac">City</label>
+              <input class="input" id="ac" type="text" autocomplete="address-level2">
+            </div>
+            <div class="field" style="flex:1 1 170px;min-width:0;margin:0">
+              <label class="field__label" for="as">State</label>
+              <select class="select" id="as" autocomplete="address-level1">
+                <option>Select your state</option>
+                <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
+                <option>Bihar</option><option>Chhattisgarh</option><option>Delhi NCT</option>
+                <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+                <option>Himachal Pradesh</option><option>Jammu &amp; Kashmir</option><option>Jharkhand</option>
+                <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+                <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
+                <option>Mizoram</option><option>Nagaland</option><option>Odisha</option>
+                <option>Puducherry</option><option>Punjab</option><option>Rajasthan</option>
+                <option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option>
+                <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+                <option>West Bengal</option><option>Other union territory</option>
+              </select>
+            </div>
+            <div class="field" style="flex:0 1 140px;min-width:0;margin:0">
+              <label class="field__label" for="az">PIN code</label>
+              <input class="input" id="az" type="text" inputmode="numeric" autocomplete="postal-code">
+            </div>
+          </div>
+          <label class="checkline checkline--top" style="margin-top:18px"><input type="checkbox" checked> Use this as my default address</label>
+          <button class="btn btn--dark btn--sm" type="submit" style="margin-top:18px">Save address</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- details -->
+    <section data-panel="details" data-panel-group="account" role="tabpanel" class="tabpanel" aria-label="Details" hidden>
+      <div style="margin-bottom:20px">
+        <h2 class="h-sect">Details</h2>
+        <p class="small muted" style="margin-top:8px">How we reach you, and how you sign in.</p>
+      </div>
+
+      <div class="row row--top">
+        <form class="card card--pad" style="flex:999 1 420px;min-width:0" onsubmit="return false">
+          <h3 class="h-kicker" style="margin-bottom:16px">Your details</h3>
+          <div class="field" style="margin:0">
+            <label class="field__label" for="dn">Name</label>
+            <input class="input" id="dn" type="text" value="Priya R.">
+          </div>
+          <div class="field">
+            <label class="field__label" for="de">Email</label>
+            <input class="input" id="de" type="email" value="priya@example.com">
+          </div>
+          <div class="field">
+            <label class="field__label" for="dw">WhatsApp number</label>
+            <input class="input" id="dw" type="tel" placeholder="+91">
+            <p class="field__hint">Used for dispatch messages and restock alerts. Nothing else.</p>
+          </div>
+          <button class="btn btn--dark btn--sm" type="submit" style="margin-top:18px">Save changes</button>
+        </form>
+
+        <div style="flex:1 1 320px;min-width:290px;display:flex;flex-direction:column;gap:20px">
+          <div class="card card--pad">
+            <h3 class="h-kicker" style="margin-bottom:14px">Sign-in</h3>
+            <p class="small muted">Change your password, or sign out everywhere if you have lost a phone.</p>
+            <div class="row row--tight" style="margin-top:16px">
+              <button class="btn btn--sm" type="button">Change password</button>
+              <button class="btn--link" type="button">Sign out everywhere</button>
+            </div>
+          </div>
+
+          <div class="card card--pad card--olive">
+            <h3 class="h-kicker" style="margin-bottom:12px">Seller verification</h3>
+            <p class="small" style="color:var(--olive-dark)">Verified on 12 Nov. This is what lets buyers trust a first listing, and it is the only thing we ask before you sell.</p>
+          </div>
+
+          <div class="card card--pad">
+            <h3 class="h-kicker" style="margin-bottom:12px">Close the account</h3>
+            <p class="small muted">We delete your details and keep only what a tax record requires. Live listings come down first.</p>
+            <button class="btn--link" type="button" style="color:var(--bad);margin-top:12px">Delete my account</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__cols">
+    <div>
+      <b>GELSOFT</b><span class="ftr__sub">INDIA</span>
+      <p class="small">Blasters, gear, parts and a second-hand marketplace. Shipped across India.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="blasters.html">Blasters</a></li>
+        <li><a href="gear.html">Gear</a></li>
+        <li><a href="parts.html">Parts &amp; upgrades</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Marketplace</h4>
+      <ul>
+        <li><a href="marketplace.html">Browse listings</a></li>
+        <li><a href="sell.html">Create a listing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="policy.html">Replacement &amp; refunds</a></li>
+        <li><a href="safety.html">Safety standards</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftr__bottom">
+    <div class="wrap"><span>Eye protection must be worn whenever a blaster is loaded. Replicas travel concealed, and stay off public ground.</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

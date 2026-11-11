@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parts, upgrades &amp; ammo — Gelsoft India</title>
+<meta name="description" content="Internals, electricals, optics, foregrips, mags and gel. Every part lists the platforms it fits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap util__inner">
+    <span>Eye protection on before anyone loads &middot; carry it concealed &middot; ships across India</span>
+    <a href="sell.html">Sell your gear</a>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap hdr__inner">
+    <a class="logo" href="index.html"><b>GELSOFT</b><span>INDIA</span></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav" id="nav" data-nav aria-label="Main">
+      <a href="blasters.html">Blasters</a>
+      <a href="gear.html">Gear</a>
+      <a href="parts.html" aria-current="page">Parts</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="request.html">Request a model</a>
+      <a class="nav__games" href="games.html"><span class="dot" aria-hidden="true"></span> Games in India</a>
+    </nav>
+    <div class="hdr__actions">
+      <a class="cart-btn" href="account.html" aria-label="Cart, empty">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h15l-1.5 9.5H6.5z" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="16" cy="20" r="1.4" fill="currentColor"/></svg>
+        0
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" style="padding-top:28px">
+    <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:18px">
+      <a href="index.html">Home</a><span>/</span><span class="here">Parts, upgrades &amp; ammo</span>
+    </nav>
+    <h1 class="h-page">Parts, upgrades &amp; ammo</h1>
+    <p class="muted measure--wide" style="margin-top:12px">Internals, electricals, optics, foregrips, suppressors, mags and gel. Every part lists the platforms it actually fits &mdash; set yours below and the rest disappears.</p>
+  </div>
+
+  <!-- compatibility -->
+  <div class="wrap" style="padding-top:24px">
+    <div class="band card--pad-lg row row--between row--center" style="border-radius:var(--r-lg);padding:24px 28px">
+      <div style="flex:1 1 380px;min-width:0">
+        <h2 style="font-size:20px;font-weight:700;color:#fff">What are you working on?</h2>
+        <p class="small on-dark" style="margin-top:8px;max-width:46em">Pick your platform and we hide everything that will not drop in. Universal parts &mdash; gel, chargers, rail accessories &mdash; stay visible whatever you pick.</p>
+      </div>
+      <div class="row row--tight row--center">
+        <label class="small on-dark" for="platform">My platform</label>
+        <select class="select" id="platform" data-key="fits" style="width:auto;min-height:50px;font-weight:600;background:var(--paper);border:none">
+          <option value="any">Everything</option>
+          <option value="gen8">TG Gen 8</option>
+          <option value="gen9">TG Gen 9</option>
+          <option value="v2">V2 gearbox</option>
+          <option value="sr16">Bohan SR16 / SBL</option>
+          <option value="bolt">Jieying bolt-action</option>
+          <option value="handi">Handi / toy grade</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap layout section" data-filter-scope>
+
+    <aside class="rail card card--pad" aria-label="Sections">
+      <div class="row row--between" style="align-items:baseline;margin-bottom:20px">
+        <h2 style="font-size:15px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;font-family:var(--body)">Sections</h2>
+        <button class="btn--link" type="button" data-filter-clear>Clear</button>
+      </div>
+
+      <fieldset class="fieldset">
+        <legend class="sr-only">Section</legend>
+        <label class="checkline"><input type="radio" name="section" value="any" data-key="section" checked><span class="name">Everything</span><span class="count">0</span></label>
+        <label class="checkline"><input type="radio" name="section" value="internals" data-key="section"><span class="name">Internals</span><span class="count">0</span></label>
+        <label class="checkline"><input type="radio" name="section" value="electrical" data-key="section"><span class="name">Electrical</span><span class="count">0</span></label>
+        <label class="checkline"><input type="radio" name="section" value="external" data-key="section"><span class="name">Externals &amp; optics</span><span class="count">0</span></label>
+        <label class="checkline"><input type="radio" name="section" value="ammo" data-key="section"><span class="name">Mags &amp; ammo</span><span class="count">0</span></label>
+      </fieldset>
+
+      <div class="fieldset">
+        <h3 class="field__label">Bench service</h3>
+        <p class="tiny muted">Rather not open it yourself? We do it, chrono it afterwards, and tell you what we found.</p>
+        <table class="table" style="margin-top:14px;font-size:13px">
+          <caption class="sr-only">Bench service prices</caption>
+          <tbody>
+            <tr><th scope="row" style="padding-left:0;font-weight:500">Open, clean, regrease</th><td style="text-align:right;padding-right:0;font-weight:600">&#8377;600</td></tr>
+            <tr><th scope="row" style="padding-left:0;font-weight:500">Full rebuild + wear parts</th><td style="text-align:right;padding-right:0;font-weight:600">&#8377;1,500</td></tr>
+            <tr><th scope="row" style="padding-left:0;font-weight:500">Chrono and tune</th><td style="text-align:right;padding-right:0;font-weight:600">&#8377;400</td></tr>
+            <tr><th scope="row" style="padding-left:0;font-weight:500">Motor or wiring swap</th><td style="text-align:right;padding-right:0;font-weight:600">&#8377;700</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+
+    <div class="results">
+      <div class="row row--between row--center" style="margin-bottom:20px">
+        <p class="small muted" data-count data-noun="parts" data-empty-text="Nothing in stock yet">Nothing in stock yet</p>
+        <div class="row row--tight row--center">
+          <label class="small muted" for="sort">Sort</label>
+          <select class="select" id="sort" style="width:auto;min-height:44px">
+            <option>Featured</option>
+            <option>Price: low to high</option>
+            <option>Price: high to low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid--auto" data-grid hidden></div>
+
+      <div class="empty" data-empty>
+        <span class="empty__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--muted-2)" stroke-width="1.8"><circle cx="10" cy="13" r="6"/><circle cx="18" cy="9" r="3.5"/></svg>
+        </span>
+        <h3>Restocking soon</h3>
+        <p>No parts on the shelf yet. Tell us the platform you run and what keeps breaking &mdash; that is how we decide what to stock first.</p>
+        <div class="row row--tight" style="justify-content:center">
+          <a class="btn btn--dark btn--sm" href="request.html">Tell us what you need</a>
+          <button class="btn btn--sm" type="button" data-filter-clear>Show everything</button>
+        </div>
+      </div>
+
+      <div class="card card--pad-lg" style="margin-top:40px">
+        <h2 class="h-sect" style="font-size:22px;margin-bottom:12px">Gel, soaked properly</h2>
+        <div class="grid grid--auto-s" style="margin-top:6px">
+          <div>
+            <h3 class="small" style="font-weight:700;margin-bottom:8px">Size</h3>
+            <p class="small muted">7&ndash;8 mm is the standard for everything we sell. Undersized gel double-feeds and jams; oversized gel will not chamber at all.</p>
+          </div>
+          <div>
+            <h3 class="small" style="font-weight:700;margin-bottom:8px">Soak time</h3>
+            <p class="small muted">Three to four hours in clean water, then drain. Left overnight they swell soft and mush inside the hop-up, which reads as a dying gearbox and is not one.</p>
+          </div>
+          <div>
+            <h3 class="small" style="font-weight:700;margin-bottom:8px">Hardness</h3>
+            <p class="small muted">Competition gel is harder and rounder, so it chronos consistently and flies straighter. It also stings more, which is why some hosts cap it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__cols">
+    <div>
+      <b>GELSOFT</b><span class="ftr__sub">INDIA</span>
+      <p class="small">Blasters, gear, parts and a second-hand marketplace. Shipped across India.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="blasters.html">Blasters</a></li>
+        <li><a href="gear.html">Gear</a></li>
+        <li><a href="parts.html">Parts &amp; upgrades</a></li>
+        <li><a href="request.html">Request a model</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Marketplace</h4>
+      <ul>
+        <li><a href="marketplace.html">Browse listings</a></li>
+        <li><a href="sell.html">Create a listing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="safety.html">Safety standards</a></li>
+        <li><a href="games.html">Games in India</a></li>
+        <li><a href="policy.html">Replacement &amp; refunds</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftr__bottom">
+    <div class="wrap"><span>Eye protection must be worn whenever a blaster is loaded. Replicas travel concealed, and stay off public ground.</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
