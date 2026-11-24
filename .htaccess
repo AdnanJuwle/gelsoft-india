@@ -1,0 +1,180 @@
+# Gelsoft India — Apache config for Hostinger shared hosting.
+# Upload this file with the site. It uses only modules Hostinger has enabled.
+
+DirectoryIndex index.php index.html
+Options -Indexes
+AddDefaultCharset UTF-8
+
+# ---------------------------------------------------------------- errors ----
+ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php
+
+# --------------------------------------------------------------- routing ----
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force https. hPanel can also do this; leaving it here is harmless either way.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Drop www. Comment out if you want www.gelsoft.in as the canonical host.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # The site was .html pages before the backend went in, so anything already
+  # shared or indexed keeps working and points at the new URL.
+  RewriteRule ^index\.html$ / [L,R=301]
+  RewriteRule ^([a-z0-9-]+)\.html$ /$1 [L,R=301]
+  RewriteRule ^admin/([a-z0-9-]+)\.html$ /admin/$1 [L,R=301]
+
+  # One URL per page: /blasters, never /blasters.php. THE_REQUEST is the raw
+  # request line, so this fires only on what the browser actually asked for and
+  # not on the internal rewrite further down, which would otherwise loop.
+  #
+  # NEVER on a POST. A 301 tells the browser to repeat the request at the new
+  # address AS A GET, with the body dropped -- only 307/308 keep the method. So
+  # redirecting a POST silently turns "add to cart" into an empty GET, and the
+  # endpoint answers "Use POST". Razorpay's webhook is the same shape and the
+  # same breakage, except it costs orders rather than a click.
+  RewriteCond %{REQUEST_METHOD} !=POST
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]*?)\.php[\s?] [NC]
+  RewriteRule ^ /%1 [L,R=301,NE]
+  RewriteRule ^index$ / [L,R=301]
+
+  # Starting a conversation about a listing.
+  RewriteRule ^listing/message/?$ listing-message.php [L,QSA]
+
+  # ...and about a game.
+  RewriteRule ^game/message/?$ game-message.php [L,QSA]
+
+  # The sitemap is generated now, so that it can list the stock. The PUBLISHED
+  # address does not change: robots.txt points at /sitemap.xml and Search
+  # Console may already have that URL, so the rewrite keeps the old name
+  # pointing at the new file.
+  #
+  # Above the .php-stripping rule it would loop; below it, a direct request for
+  # /sitemap.php normalises to /sitemap and the generic rule at the bottom
+  # serves the same file. Either way one page, one address.
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+  # Pages kept in the database: /terms, /privacy, and anything added later.
+  RewriteRule ^(terms|privacy)/?$ page.php?slug=$1 [L,QSA]
+
+  # A marketplace listing.
+  RewriteRule ^marketplace/([a-z0-9][a-z0-9-]*)/?$ listing.php?slug=$1 [L,QSA]
+
+  # A product sits under its shelf: /blasters/tg-gen8-m4. QSA keeps anything
+  # already in the query string, so a link back from a filtered shelf survives.
+  RewriteRule ^(blasters|gear|parts)/([a-z0-9][a-z0-9-]*)/?$ product.php?slug=$2 [L,QSA]
+
+  # Serve the .php file that sits behind the clean URL.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L]
+
+  # Same again, for anything still served as .html.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# ------------------------------------------------------- protected paths ----
+# The database password and the payment keys live in inc/config.php, which has
+# its own .htaccess. This is the belt to that braces.
+<IfModule mod_authz_core.c>
+  <FilesMatch "^config(\.example|\.local)?\.php$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  <FilesMatch "^config(\.example|\.local)?\.php$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
+
+# The project's own notes and dev-only files are not part of the site.
+#
+# README / SECURITY / DEPLOY / STATUS describe exactly how the defences work,
+# where the config lives and which parts are unfinished. None of that is
+# secret in the sense that the site depends on it, but handing it to whoever
+# asks is free reconnaissance, and STATUS.md in particular is a list of the
+# weakest places to push.
+#
+# router.php only exists for PHP's built-in dev server. On Apache it is dead
+# code that answers 500, which is noise in the log and a hint about the stack.
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(md|sql|lock|bak|ini|log|dist)$">
+    Require all denied
+  </FilesMatch>
+  <Files "router.php">
+    Require all denied
+  </Files>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  <FilesMatch "\.(md|sql|lock|bak|ini|log|dist)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+  <Files "router.php">
+    Order allow,deny
+    Deny from all
+  </Files>
+</IfModule>
+
+# ------------------------------------------------------------ compression ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------- caching ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                          "access plus 1 week"
+  # Pages are generated per request now, so they are never cached.
+  ExpiresByType text/html                 "access plus 0 seconds"
+  ExpiresByType image/jpeg                "access plus 1 year"
+  ExpiresByType image/png                 "access plus 1 year"
+  ExpiresByType image/webp                "access plus 1 year"
+  ExpiresByType image/svg+xml             "access plus 1 year"
+  ExpiresByType image/x-icon              "access plus 1 year"
+  ExpiresByType font/woff2                "access plus 1 year"
+  # Match the Cache-Control below. Without these two the Expires header says a
+  # week while Cache-Control says a year: Cache-Control wins in any modern
+  # client, but a header dump reads as a contradiction and an old proxy that
+  # only speaks Expires would re-fetch 52 times more often than it needs to.
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+</IfModule>
+
+# --------------------------------------------------------------- headers ----
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always unset X-Powered-By
+
+  # CSS and JS carry ?v=<file mtime>, so a changed file is a new URL and the old
+  # one can be cached hard.
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Never cache a page with someone's session in it.
+  <FilesMatch "\.php$">
+    Header set Cache-Control "no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------- mime types ---
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType font/woff2 .woff2
+</IfModule>

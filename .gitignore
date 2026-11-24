@@ -1,0 +1,22 @@
+# Secrets: database password, Razorpay keys, mailbox password.
+inc/config.php
+
+# The development copy. Its existence is what stops a laptop having a
+# config.php that could be uploaded over the live one.
+inc/config.local.php
+
+# Anything people upload through the admin or the sell form.
+uploads/*
+!uploads/.gitkeep
+!uploads/.htaccess
+
+# Local noise
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test runs and generated renders
+__pycache__/
+*.pyc

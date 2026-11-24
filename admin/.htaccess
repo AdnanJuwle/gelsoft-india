@@ -1,0 +1,19 @@
+# /admin/ has no sign-in of its own yet — the pages are a front end only.
+# Until there is a backend with real auth, lock the folder at the server.
+#
+# On Hostinger: hPanel > Advanced > Password Protect Directories, point it at
+# public_html/admin and set a user. That writes the same directives as below.
+#
+# Doing it by hand instead: create the password file outside public_html with
+#   htpasswd -c /home/USERNAME/.htpasswds/admin yourname
+# then uncomment these four lines and fix the path.
+#
+# AuthType Basic
+# AuthName "Gelsoft admin"
+# AuthUserFile /home/USERNAME/.htpasswds/admin
+# Require valid-user
+
+# Keep the admin pages out of search results whatever happens.
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>

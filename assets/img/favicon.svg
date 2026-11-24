@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Gelsoft India">
+<!--
+  The tab icon. SVG rather than a .ico because it is one file, it is sharp at
+  every size, and it is text a person can edit: there is no mark to scan in and
+  nothing here was generated.
+
+  It is the wordmark's first letter in the site's own ink and paper, so it is
+  derived from the logo already sitting in the header rather than invented
+  beside it. Replace it when there is a real mark; nothing else has to change.
+
+  The colours SWAP in dark mode, and that is a bonus rather than the point: an
+  ink square with a paper G was checked at 16px against Chrome's dark tab
+  strip (#35363A) and is perfectly legible there already. What the swap is
+  worth is browser-dependent, and worth being honest about: the media query
+  below is verified to work (light gives ink-on-paper, dark the reverse), but
+  whether a browser hands its own colour scheme to the favicon slot is the
+  browser's business. Chrome and Firefox do; Safari renders it light. An SVG
+  favicon can at least CARRY a media query. A .ico cannot, which is the other
+  reason for this format.
+-->
+<style>
+  .bg { fill: #15171A }
+  .fg { fill: #F4F2ED }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #F4F2ED }
+    .fg { fill: #15171A }
+  }
+</style>
+<rect class="bg" width="32" height="32" rx="7"/>
+<text class="fg" x="16" y="16" text-anchor="middle" dominant-baseline="central"
+      font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+      font-size="22" font-weight="800">G</text>
+</svg>

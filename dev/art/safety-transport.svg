@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 200 112.5"><defs><pattern id="mesh" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 0L5 5M5 0L0 5" stroke="#15171A" stroke-width="0.8" fill="none"/></pattern></defs><rect width="200" height="112.5" fill="#EEEAE1"/>
+<path d="M72 40 Q100 16 128 40" fill="none" stroke="#15171A" stroke-width="4"/>
+<rect x="22" y="38" width="156" height="52" rx="12" fill="#4C5A3C"/>
+<path d="M32 48 H168" stroke="#EEEAE1" stroke-width="2" stroke-dasharray="3 2"/>
+<rect x="158" y="44" width="8" height="10" rx="2" fill="#15171A"/>
+<rect x="36" y="62" width="40" height="18" rx="3" fill="#3B472E"/></svg>

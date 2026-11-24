@@ -42,7 +42,7 @@ body.admin { background: #EFEDE7; }
 .admin-main .table-wrap { border-radius: var(--r); }
 
 .admin-head { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; }
-.admin-head h1 { font-size: 26px; font-weight: 700; }
+.admin-head h1, .admin-head h2 { font-size: 26px; font-weight: 700; }
 .admin-head p { font-size: 14px; color: var(--muted); margin-top: 8px; max-width: 60em; }
 
 .toolbar { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
@@ -57,7 +57,56 @@ body.admin { background: #EFEDE7; }
 .rowline .meta { font-size: 12px; color: var(--muted); }
 .rowline .actions { display: flex; gap: 8px; }
 
+
+/* ------------------------------------------------------------- admins --- */
+
+/* Two cards side by side on a desk, stacked on a phone. auto-fit rather than
+   a fixed 1fr 1fr, so one card on its own does not sit at half width. */
+.admin-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
 @media (max-width: 860px) {
-  .admin-nav { max-width: none; }
-  .admin-nav button { min-height: 48px; }
+  .admin-bar .wrap { gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+  .admin-bar__who { display: none; }
+  .admin-bar__spacer { flex-grow: 1; }
+
+  .admin-shell { gap: 16px; padding-top: 16px; }
+
+  /* The section list becomes a scrolling tab strip across the top. A 210px
+     sidebar on a phone is a screenful of nav before any content. */
+  .admin-nav {
+    max-width: none; min-width: 0; width: 100%;
+    display: flex; gap: 6px; padding: 8px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+
+    /* 968px of tabs in 337px of room, with the scrollbar hidden and no
+       scrollbar at all on a touch screen: Orders, Marketplace, Requests,
+       Conversations, Policy pages and Admins were simply not there. The edge
+       shadow is the same one the public tab strips use -- the two `local`
+       layers are washes of the card colour that travel with the content, so
+       each parks over its shadow exactly when that end is reached. */
+    background:
+      linear-gradient(to right, var(--card) 40%, rgba(255, 255, 255, 0)) left center,
+      linear-gradient(to left,  var(--card) 40%, rgba(255, 255, 255, 0)) right center,
+      radial-gradient(farthest-side at 0    50%, rgba(26, 24, 21, 0.22), rgba(26, 24, 21, 0)) left center,
+      radial-gradient(farthest-side at 100% 50%, rgba(26, 24, 21, 0.22), rgba(26, 24, 21, 0)) right center,
+      var(--card);
+    background-repeat: no-repeat;
+    background-size: 28px 100%, 28px 100%, 15px 100%, 15px 100%, auto;
+    background-attachment: local, local, scroll, scroll, local;
+  }
+  .admin-nav::-webkit-scrollbar { display: none; }
+  .admin-nav button { width: auto; flex: 0 0 auto; min-height: 44px; padding: 0 14px; white-space: nowrap; }
+  .admin-nav__note { display: none; }
+
+  .admin-head h1, .admin-head h2 { font-size: 22px; }
+  .toolbar { padding: 14px; }
+  .toolbar .select { width: 100%; flex: 1 1 100%; }
+  .admin-cols { grid-template-columns: 1fr; gap: 16px; }
+  .rowline { padding: 14px; }
+  .rowline .actions { width: 100%; }
 }

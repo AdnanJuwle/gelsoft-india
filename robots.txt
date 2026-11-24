@@ -1,0 +1,13 @@
+# /uploads/ is deliberately NOT blocked. It holds product photos, marketplace
+# photos and game banners -- all already public on the pages that show them --
+# and blocking it hid every product photo from Google: no picture beside a
+# result, nothing in Google Images, and product results that need an image.
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /cart
+Disallow: /checkout
+Disallow: /account
+Disallow: /search
+
+Sitemap: https://gelsoft.in/sitemap.xml
